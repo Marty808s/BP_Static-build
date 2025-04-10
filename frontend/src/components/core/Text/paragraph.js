@@ -1,13 +1,8 @@
-import PropTypes from "prop-types";
 
-export default function Paragraph({ text, property, size }) {
+import React from "react";
+
+export default function Paragraph({ children, property, size }) {
     return (
-        <p className={`${property} ${size}`}>{text}</p>
+        <p className={`${property} ${size}`}>{children}</p>
     );
 }
-
-Paragraph.propTypes = {
-    text: PropTypes.string,
-    property: PropTypes.oneOf(["font-bold", "font-normal"]),
-    size: PropTypes.oneOf(["text-base", "text-lg", "text-xl"]),
-};
