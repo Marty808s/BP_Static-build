@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default function Headings({ children, sizeTag, property }) {
     // defaultní hodnota bez parametru bude h4
     let sizeTagClass = null;
