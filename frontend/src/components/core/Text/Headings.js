@@ -1,31 +1,18 @@
 import React from 'react';
 
-
-export default function Headings({ children, sizeTag, property }) {
-    // defaultní hodnota bez parametru bude h4
-    let sizeTagClass = null;
+export default function Headings({ children, sizeTag = 'h4', property }) {
     
-    switch(sizeTag) {
-        case 'h4':
-            sizeTagClass = "text-2xl font-semibold";
-            break;
-        case 'h3':
-            sizeTagClass = "text-4xl font-semibold";
-            break;
-        case 'h2':
-            sizeTagClass = "text-5xl font-semibold";
-            break;
-        case 'h1':
-            sizeTagClass = "text-7xl font-semibold";
-            break;
-        default:
-            sizeTagClass = "text-2xl font-semibold";
-    }
+    const headingVariants = {
+        'h4': "text-2xl font-semibold",
+        'h3': "text-4xl font-semibold",
+        'h2': "text-5xl font-semibold",
+        'h1': "text-7xl font-semibold"
+    };
 
     return (
         React.createElement(
             sizeTag,
-            { className: `${sizeTagClass} ${property || ''}`.trim() },
+            { className: `${headingVariants[sizeTag] || headingVariants.h4} ${property || ''}`.trim() },
             children
         )
     );

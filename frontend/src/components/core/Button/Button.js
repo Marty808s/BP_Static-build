@@ -1,9 +1,12 @@
 import React from "react";
+import Paragraph from "../Text/Paragraph";
 
-export default function Button({children, property, onClick, variant = "primary"}) {
+export default function Button({children, text, property, onClick, variant = "primary"}) {
 
     const baseClass = "px-4 py-2 rounded-lg font-medium transition-colors duration-200";
-
+    
+    const baseText = text ? <Paragraph>{text}</Paragraph> : null;
+    
     const variants = {
         // předělat podle barev ve figmě
         primary: "bg-blue-600 text-white hover:bg-blue-700",
@@ -19,7 +22,7 @@ export default function Button({children, property, onClick, variant = "primary"
             onClick={onClick}
             type="button"
         >
-            {children}
+            {baseText || children}
         </button>
     );
 }

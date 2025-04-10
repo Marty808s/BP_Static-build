@@ -13,11 +13,11 @@ function Test() {
   return (
     <div className="App">
       <header className="App-header">
-         <p className='text-black'>asdssasd</p>
+        <Paragraph variant={"largeBold"}>Test par</Paragraph>
         <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
           onClick = {() => console.log("Tailwind je ready!!")}
         >
-          <Paragraph property={"font-bold"} size={"text-lg"}>Ahoj</Paragraph>
+          <Paragraph variant={"baseBold"}>Ahoj</Paragraph>
         </button>
       </header>
         <Headings sizeTag={"h1"} property={"text-red-600"}>Heading 1</Headings>
@@ -33,9 +33,12 @@ function Test() {
           <Headings sizeTag={"h2"}>Heading 1</Headings>
         </Container>
 
-        <Button  property={"mt-4"} variant = {"danger"} onClick={handleClick}>
-          <Paragraph property={"font-bold"}>Zmáčkni mě</Paragraph>
+        <Button text={"Zmáčkni mě vole"} property={"mt-4"} variant = {"danger"} onClick={handleClick}/>
+        
+        <Button property={"mt-4"} onClick={handleClick}>
+          <Paragraph>Ahoj</Paragraph>
         </Button>
+
     </div>
   );
 }
