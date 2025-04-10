@@ -1,6 +1,7 @@
-import './App.css';
+import Paragraph from "../components/core/Text/paragraph";
 
-function App() {
+
+function Test() {
   return (
     <div className="App">
       <header className="App-header">
@@ -8,11 +9,11 @@ function App() {
         <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
           onClick = {() => console.log("Tailwind je ready!!")}
         >
-          Button
+          <Paragraph text={"Ahoj"} property={"font-paragraph-1"} size={"text-xl"} />
       </button>
       </header>
     </div>
   );
 }
 
-export default App;
+export default Test;
