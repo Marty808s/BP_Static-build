@@ -3,22 +3,25 @@ import Paragraph from "../Text/Paragraph";
 
 export default function Button({children, text, property, onClick, variant = "primary"}) {
 
-    const baseClass = "px-4 py-2 rounded-lg font-medium transition-colors duration-200";
+    const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
+    const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
     
     const baseText = text ? <Paragraph>{text}</Paragraph> : null;
     
     const variants = {
-        // předělat podle barev ve figmě
-        primary: "bg-blue-600 text-white hover:bg-blue-700",
-        secondary: "bg-gray-200 text-gray-800 hover:bg-gray-300",
-        danger: "bg-red-600 text-white hover:bg-red-700",
-        success: "bg-green-600 text-white hover:bg-green-700",
-        outline: "border-2 border-blue-600 text-blue-600 hover:bg-blue-50"
+        primary: "bg-facultyCol text-white hover:bg-gray-400 " + baseClassBig,
+        blue: "bg-blue-300 text-gray-800 hover:bg-gray-400 " + baseClassBig,
+        red: "bg-red-400 text-white hover:bg-gray-400 " + baseClassBig,
+        yellow: "bg-yellow-300 text-white hover:bg-gray-400 " + baseClassBig,
+        primarySmall: "bg-facultyCol text-white hover:bg-gray-400 " + baseClassSmall,
+        blueSmall: "bg-blue-300 text-gray-800 hover:bg-gray-400 " + baseClassSmall,
+        redSmall: "bg-red-400 text-white hover:bg-gray-400 " + baseClassSmall,
+        yellowSmall: "bg-yellow-300 text-white hover:bg-gray-400 " + baseClassSmall,
     };
 
     return (
         <button
-            className={`${baseClass} ${variants[variant]} ${property || ''}`}
+            className={`${variants[variant]} ${property || ''}`}
             onClick={onClick}
             type="button"
         >

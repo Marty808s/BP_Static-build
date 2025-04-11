@@ -1,12 +1,18 @@
 import React from "react";
 
+export default function ContainerForEntity({children, property, variant = "gray"}) {
 
-export default function ContainerEntity({children, property, color}) {
-    //přidat barvy z figmy na proměnnou - parametr color (navázat s figmou podle čísla) => varianty jak u buttonu
-    const defaultClass = "border border-black rounded-lg p-4"
+    const defaultClass = "border border-black rounded-lg p-2"
+
+    const variants = {
+        "yellow": "bg-yellow-100 " + defaultClass,
+        "gray": "bg-gray-50 " + defaultClass,
+        "red": "bg-red-50 " + defaultClass,
+        "green": "bg-green-50 " + defaultClass,
+    }
 
     return(
-        <div className={`${defaultClass} ${property || ""}`}>
+        <div className={`${variants[variant]} ${property || ""}`}>
             {children}
         </div>
     )

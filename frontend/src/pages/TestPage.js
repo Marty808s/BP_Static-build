@@ -1,8 +1,9 @@
 import Paragraph from "../components/core/Text/Paragraph";
 import Headings from "../components/core/Text/Headings";
-import ContainerEntity from "../components/core/Container/ContainerForEntity";
+import ContainerForEntity from "../components/core/Container/ContainerForEntity";
 import Container from "../components/core/Container/Container";
 import Button from "../components/core/Button/Button";
+import Nav from "../components/core/Nav";
 
 function Test() {
 
@@ -20,20 +21,21 @@ function Test() {
           <Paragraph variant={"baseBold"}>Ahoj</Paragraph>
         </button>
       </header>
+        <Nav></Nav>
         <Headings sizeTag={"h1"} property={"text-red-600"}>Heading 1</Headings>
         <Headings sizeTag={"h2"}>Heading 2</Headings>
         <Headings sizeTag={"h3"}>Heading 3</Headings>
         <Headings sizeTag={"h4"}>Heading 4</Headings>
 
-        <ContainerEntity property={"bg-blue-600 p-1"}>
+        <ContainerForEntity variant={"green"}>
           <Headings sizeTag={"h4"}>Heading 2</Headings>
-        </ContainerEntity>
+        </ContainerForEntity>
 
         <Container property={"bg-blue-200"}>
           <Headings sizeTag={"h2"}>Heading 1</Headings>
         </Container>
 
-        <Button text={"Zmáčkni mě vole"} property={"mt-4"} variant = {"danger"} onClick={handleClick}/>
+        <Button text={"Zmáčkni mě"} property={"mt-4 ml-4"} variant = {"redSmall"} onClick={handleClick}/>
         
         <Button property={"mt-4"} onClick={handleClick}>
           <Paragraph>Ahoj</Paragraph>
