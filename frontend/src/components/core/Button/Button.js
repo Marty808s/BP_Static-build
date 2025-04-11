@@ -3,6 +3,7 @@ import Paragraph from "../Text/Paragraph";
 
 export default function Button({children, text, property, onClick, variant = "primary"}) {
 
+    {/* PŘIDAT PARAMETR NA IKONY */}
     const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
     const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
     
