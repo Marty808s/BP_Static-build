@@ -1,13 +1,74 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "./Container/Container";
 import Headings from "./Text/Headings";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+
 
 const USER = {
     "name": "Aleš",
     "faculty": "PřF"
 }
 
-export default function Nav({user=USER}) {
+function SubMenu({ items, title }) {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="relative inline-block" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <button className="text-white hover:text-gray-200 transition-colors">
+                <Container property={"flex items-center gap-1"}>
+                    {title}
+                    {!isOpen ? (<FaAngleDown size="12" className="text-white" />) : (<FaAngleUp size="12" className="text-white" />)}
+                </Container>
+            </button>
+            {isOpen && (
+                <div className="absolute bg-facultyCol shadow-lg rounded-md py-2 min-w-[150px] max-w-[200px] z-50">
+                    {Object.entries(items).map(([key, value]) => (
+                        <Link 
+                            key={key} 
+                            to={value} 
+                            className="block px-4 py-2 text-white hover:text-gray-200 transition-colors"
+                        >
+                            {key}
+                        </Link>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function LinkNav({navigationDict}) {
+    return (
+        <Container property="flex items-center gap-8">
+            {Object.entries(navigationDict).map(([key, value]) => {
+                if (typeof value === 'object' && Object.keys(value).length > 1) {
+                    return <SubMenu key={key} title={key} items={value} />;
+                } else {
+                    return (
+                        <Link key={key} to={value} className="text-white hover:text-gray-200 transition-colors">
+                            {key}
+                        </Link>
+                    );
+                }
+            })}
+        </Container>
+    );
+}
+
+function Nav({user=USER}) {
+    // TOHLE BUDE NÁSLEDNĚ ŘÍZENO ROLÍ
+    const navigationDict = {
+        "Home": "/",
+        "Účet": "/",
+        "Objednávky": "/",
+        "About": {
+            "Tohle je dlouhý text, který nemá význam": "/about",
+            "O vás": "/oVas"
+        },
+        "Contact": "/contact"
+    };
+
     return(
         <>
         {/* 1/16 a 15/16 */}
@@ -17,14 +78,13 @@ export default function Nav({user=USER}) {
                 <Headings sizeTag="h4" property={"m-4 text-white"}>InternHub</Headings>
             </Container>
 
-            {/* NAVIGACE - dodělat do komponenty pro Link s paragraphem a shadow na hover (DODĚLAT RESPONSIVITU)*/}
-            <Container property={"flex flex-row items-center justify-end gap-8 m-4"}>
-                <p className="text-white">ASDASDAS</p>
-                <p className="text-white">ASDASDAS</p>
-                <p className="text-white">ASDASDAS</p>
-                <p className="text-white">ASDASDAS</p>
+            {/* NAVIGACE */}
+            <Container property={"flex items-center justify-end m-4"}>
+                <LinkNav navigationDict={navigationDict} />
             </Container>
         </Container>
         </>
-    )
+    );
 }
+
+export default Nav;
