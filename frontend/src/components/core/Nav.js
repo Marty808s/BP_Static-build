@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Container from "./Container/Container";
-import Headings from "./Text/Headings";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import Button from "./Button/Button";
+import Container from "@core/Container/Container";
+import Headings from "@core/Text/Headings";
+import { FaAngleDown, FaAngleUp, FaBars, FaTimes } from "react-icons/fa";
+import Button from "@core/Button/Button";
 
 
 const USER = {
@@ -23,7 +23,7 @@ function SubMenu({ items, title }) {
                 </Container>
             </Button>
             {isOpen && (
-                <Container property="absolute bg-facultyCol shadow-lg rounded-md min-w-[150px] max-w-[200px] z-50">
+                <Container property="absolute bg-facultyCol px-2 py-1 shadow-lg rounded-md min-w-[150px] max-w-[200px] z-50">
                     {Object.entries(items).map(([key, value]) => (
                         <Link 
                             key={key} 
@@ -39,9 +39,9 @@ function SubMenu({ items, title }) {
     );
 }
 
-function LinkNav({navigationDict}) {
+function LinkNav({navigationDict, isMobile = false}) {
     return (
-        <Container property="flex items-center gap-8">
+        <Container property={`${isMobile ? "flex flex-col items-start gap-4" : "flex items-center gap-8"}`}>
             {Object.entries(navigationDict).map(([key, value]) => {
                 if (typeof value === 'object' && Object.keys(value).length > 1) {
                     return <SubMenu key={key} title={key} items={value} />;
@@ -58,7 +58,8 @@ function LinkNav({navigationDict}) {
 }
 
 function Nav({user=USER}) {
-    // TOHLE BUDE NÁSLEDNĚ ŘÍZENO ROLÍ
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    
     const navigationDict = {
         "Home": "/",
         "Účet": "/",
@@ -72,17 +73,44 @@ function Nav({user=USER}) {
 
     return(
         <>
-        {/* 1/16 a 15/16 */}
-        <Container property={"w-full grid grid-cols-[1fr_15fr] gap-4 bg-facultyCol"}>
-            {/* TEXT */}
-            <Container property={"flex items-center"}>
-                <Headings sizeTag="h4" property={"m-4 text-white"}>InternHub</Headings>
+        <Container property={"w-full bg-facultyCol"}>
+            <Container property={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"}>
+                <Container property={"flex items-center justify-between h-16"}>
+                    {/* Logo */}
+                    <Container property={"flex items-center"}>
+                        <Headings sizeTag="h4" property={"text-white"}>InternHub</Headings>
+                    </Container>
+
+                    {/* Desktop Menu */}
+                    <Container property={"hidden md:flex items-center"}>
+                        <LinkNav navigationDict={navigationDict} />
+                    </Container>
+
+                    {/* Mobile menu button */}
+                    <Container property={"md:hidden"}>
+                        <Button 
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            property="text-white hover:text-gray-200"
+                            noVariant={true}
+                        >
+                            {isMobileMenuOpen ? (
+                                <FaTimes size={24} />
+                            ) : (
+                                <FaBars size={24} />
+                            )}
+                        </Button>
+                    </Container>
+                </Container>
             </Container>
 
-            {/* NAVIGACE */}
-            <Container property={"flex items-center justify-end m-4"}>
-                <LinkNav navigationDict={navigationDict} />
-            </Container>
+            {/* Mobile Menu */}
+            {isMobileMenuOpen && (
+                <Container property={"md:hidden"}>
+                    <Container property={"px-2 pt-2 pb-3 space-y-1 sm:px-3"}>
+                        <LinkNav navigationDict={navigationDict} isMobile={true} />
+                    </Container>
+                </Container>
+            )}
         </Container>
         </>
     );

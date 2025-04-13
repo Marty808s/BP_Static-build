@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ContainerForEntity({children, property, variant = "gray"}) {
+export default function ContainerForEntity({id, children, property, variant = "gray"}) {
 
     const defaultClass = "border border-black rounded-lg p-2"
 
@@ -12,7 +12,10 @@ export default function ContainerForEntity({children, property, variant = "gray"
     }
 
     return(
-        <div className={`${variants[variant]} ${property || ""}`}>
+        <div 
+            className={`${variants[variant]} ${property || ""}`}
+            id={id}
+        >
             {children}
         </div>
     )

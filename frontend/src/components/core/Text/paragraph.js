@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Paragraph({ children, variant = "base", property }) {
+export default function Paragraph({ children, variant = "base", property, onClick, id }) {
 
     const variants = {
         baseBold: "font-bold text-base",
@@ -10,7 +10,11 @@ export default function Paragraph({ children, variant = "base", property }) {
     };
 
     return (
-        <p className={`${variants[variant] || variants.base} ${property || ''}`}>
+        <p 
+            id={id}
+            className={`${variants[variant] || variants.base} ${property || ''} ${onClick ? 'cursor-pointer' : ''}`}
+            onClick={onClick}
+        >
             {children}
         </p>
     );
