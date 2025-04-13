@@ -7,7 +7,6 @@ import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
 export default function Button({children, text, property, onClick, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white"}) {
 
-    {/* PŘIDAT PARAMETR NA IKONY */}
     const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
     const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
 
