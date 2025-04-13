@@ -23,12 +23,12 @@ function SubMenu({ items, title }) {
                 </Container>
             </Button>
             {isOpen && (
-                <Container property="absolute bg-facultyCol shadow-lg rounded-md py-2 min-w-[150px] max-w-[200px] z-50">
+                <Container property="absolute bg-facultyCol shadow-lg rounded-md min-w-[150px] max-w-[200px] z-50">
                     {Object.entries(items).map(([key, value]) => (
                         <Link 
                             key={key} 
                             to={value} 
-                            className="block px-4 py-2 text-white hover:text-gray-200 transition-colors"
+                            className="block text-white hover:text-gray-200 transition-colors"
                         >
                             {key}
                         </Link>
