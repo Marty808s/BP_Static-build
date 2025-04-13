@@ -1,11 +1,30 @@
 import React from "react";
 import Paragraph from "../Text/Paragraph";
+import { FiBook, FiEdit, FiSearch, FiFilter, FiPlus } from "react-icons/fi";
+import { TbUsers } from "react-icons/tb";
+import { RxCross1, RxCheck } from "react-icons/rx";
+import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
-export default function Button({children, text, property, onClick, variant = "primary"}) {
+export default function Button({children, text, property, onClick, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white"}) {
 
     {/* PŘIDAT PARAMETR NA IKONY */}
     const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
     const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
+
+    const icons = {
+        angleDown: <FaAngleDown size={iconSize} className={iconColor} />,
+        angleUp: <FaAngleUp size={iconSize} className={iconColor} />,
+        book: <FiBook size={iconSize} className={iconColor} />,
+        edit: <FiEdit size={iconSize} className={iconColor} />,
+        search: <FiSearch size={iconSize} className={iconColor} />,
+        filter: <FiFilter size={iconSize} className={iconColor} />,
+        plus: <FiPlus size={iconSize} className={iconColor} />,
+        cross: <RxCross1 size={iconSize} className={iconColor} />,
+        check: <RxCheck size={iconSize} className={iconColor} />,
+        users: <TbUsers size={iconSize} className={iconColor} />,
+    }
+
+    const baseIconLayout = "inline-flex items-center gap-1"
     
     const baseText = text ? <Paragraph>{text}</Paragraph> : null;
     
@@ -21,11 +40,13 @@ export default function Button({children, text, property, onClick, variant = "pr
     };
 
     return (
+
         <button
-            className={`${variants[variant]} ${property || ''}`}
+            className={`${noVariant ? "" : variants[variant]} ${buttonSize === "big" ? baseClassBig : baseClassSmall} ${property || ''} ${icon && baseIconLayout}`}
             onClick={onClick}
             type="button"
         >
+            {icon && icons[icon]}
             {baseText || children}
         </button>
     );

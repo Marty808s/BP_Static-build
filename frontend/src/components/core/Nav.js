@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "./Container/Container";
 import Headings from "./Text/Headings";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import Button from "./Button/Button";
 
 
 const USER = {
@@ -14,15 +15,15 @@ function SubMenu({ items, title }) {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="relative inline-block" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
-            <button className="text-white hover:text-gray-200 transition-colors">
+        <Container property="relative inline-block" onMouseEnter={() => setIsOpen(true)} onMouseLeave={() => setIsOpen(false)}>
+            <Button property="text-white hover:text-gray-200 transition-colors" noVariant={true}>
                 <Container property={"flex items-center gap-1"}>
                     {title}
                     {!isOpen ? (<FaAngleDown size="12" className="text-white" />) : (<FaAngleUp size="12" className="text-white" />)}
                 </Container>
-            </button>
+            </Button>
             {isOpen && (
-                <div className="absolute bg-facultyCol shadow-lg rounded-md py-2 min-w-[150px] max-w-[200px] z-50">
+                <Container property="absolute bg-facultyCol shadow-lg rounded-md py-2 min-w-[150px] max-w-[200px] z-50">
                     {Object.entries(items).map(([key, value]) => (
                         <Link 
                             key={key} 
@@ -32,9 +33,9 @@ function SubMenu({ items, title }) {
                             {key}
                         </Link>
                     ))}
-                </div>
+                </Container>
             )}
-        </div>
+        </Container>
     );
 }
 

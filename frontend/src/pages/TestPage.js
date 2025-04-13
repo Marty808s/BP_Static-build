@@ -12,7 +12,7 @@ function Test() {
   }
 
   return (
-    <div className="App">
+    <Container property="App">
       <header className="App-header">
         <Paragraph variant={"largeBold"}>Test par</Paragraph>
         <button className="bg-blue-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
@@ -35,13 +35,13 @@ function Test() {
           <Headings sizeTag={"h2"}>Heading 1</Headings>
         </Container>
 
-        <Button text={"Zmáčkni mě"} property={"mt-4 ml-4"} variant = {"redSmall"} onClick={handleClick}/>
+        <Button text={"Zmáčkni mě"} property={"mt-4 ml-4"} variant = {"redSmall"} onClick={handleClick} icon={"cross"}/>
         
         <Button property={"mt-4"} onClick={handleClick}>
           <Paragraph>Ahoj</Paragraph>
         </Button>
 
-    </div>
+    </Container>
   );
 }
 
