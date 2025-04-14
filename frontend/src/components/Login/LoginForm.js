@@ -41,7 +41,8 @@ export default function LoginForm() {
                     onChange={handleAccess}
                 />
                 <TextField 
-                    id="password" 
+                    id="password"
+                    type="password"
                     onIconClick={handleButtonClick} 
                     icon="lock" 
                     required={true} 
