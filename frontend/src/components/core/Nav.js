@@ -61,7 +61,7 @@ function Nav({user=USER}) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     
     const navigationDict = {
-        "Home": "/",
+        "Nabídka praxí": "/nabidka",
         "Účet": "/",
         "Objednávky": "/",
         "About": {
