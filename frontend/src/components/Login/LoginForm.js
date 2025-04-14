@@ -22,7 +22,7 @@ export default function LoginForm() {
         <Container property="w-full max-w-md p-8 bg-white rounded-lg shadow-lg mt-[-250px]">
             <LoginSwitch getLoginType={handleAccess}/>
             <Headings sizeTag="h4" property="text-center">Přihlášení</Headings>
-            <TextField placeholder={"Jméno"} property={"m-4"}></TextField>
+            <TextField required={true} label={"Přihlašovácí jméno"} placeholder={"Jméno"} property={"m-4"}></TextField>
         </Container>
         </>
     );

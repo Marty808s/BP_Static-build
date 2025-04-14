@@ -8,10 +8,15 @@ export default function TextField({id, property, label, placeholder, icon = fals
 
     const labelEntity = label ? <Paragraph>{label}</Paragraph> : null;
 
+    const requiredLabel = <Paragraph property={"text-red-600 ml-1"}>*</Paragraph>
+
     const inputClass = "w-full px-4 py-1 text-base text-gray-900 bg-gray-100 rounded-lg border-2";
     return (
         <Container property={property}>
-            {labelEntity}
+            <Container property="flex items-center">
+                {labelEntity}
+                {required && requiredLabel}
+            </Container>
             <input type="text" id={id} className={inputClass + property} placeholder={placeholder || ""} required={required} />
         </Container>
     );
