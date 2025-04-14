@@ -6,6 +6,9 @@ import Nav from "@components/core/Nav";
 import LoginForm from "@login/LoginForm";
 
 export default function LoginPage() {
+
+    // handle loginu - z komponenty LoginForm - hadnle API a vytvoření session
+
     return (
         <>
         <Nav/>

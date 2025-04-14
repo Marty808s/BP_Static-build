@@ -4,7 +4,6 @@ import Button from "@core/Button/Button";
 import Paragraph from "@components/core/Text/Paragraph";
 
 export default function LoginSwitch({getLoginType}) {
-
     const logTypes = ["STAG", "Department"]
 
     // Barevné varianty stavů
@@ -16,30 +15,34 @@ export default function LoginSwitch({getLoginType}) {
         {"Department": basicCol}
     ])
     
-    const [selectedType, selectType] = useState(logTypes[0]) /* INIT bude stag */
+    const [selectedType, setSelectedType] = useState({"switch": logTypes[0]}) /* INIT bude stag */
 
-    const handleColorChange = (id) => {
+    const handleColorChange = useCallback((id) => {
         const newColors = colorTypes.map(item => {
             const key = Object.keys(item)[0];
             return { [key]: key === id ? selectedCol : basicCol };
         });
         setColors(newColors);
-    }
+    }, [colorTypes]);
 
-
-    const handleSwitch = (event) => {
+    const handleSwitch = useCallback((event) => {
         const clickedId = event.target.id;
-
-        // TOHLE PŘEDĚLAT NA CALLBACK
-        selectType(clickedId);
-        getLoginType(clickedId);
+        const newState = {"switch": clickedId};
+        
+        // Lokální stav
+        setSelectedType(newState);
+        
+        // Callback s novou hodnotou
+        getLoginType(newState);
+        
+        // Aktualizujeme barvy
         handleColorChange(clickedId);
-    }
+    }, [getLoginType, handleColorChange]);
 
     useEffect(() => {
-        handleColorChange(selectedType);
+        handleColorChange(selectedType.switch);
         getLoginType(selectedType);
-    },[])
+    }, []);
 
     return(
         <>
