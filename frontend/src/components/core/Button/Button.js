@@ -42,7 +42,12 @@ export default function Button({id, children, text, property, onClick, variant =
 
         <button
             id={id}
-            className={`${noVariant ? "" : variants[variant]} ${!noVariant && (buttonSize === "big" ? baseClassBig : baseClassSmall)} ${property || ''} ${icon && baseIconLayout}`}
+            className={`
+                ${noVariant ? "" : variants[variant]} 
+                ${!noVariant && (buttonSize === "big" ? baseClassBig : baseClassSmall)} 
+                ${property || ''} 
+                ${icon && baseIconLayout}
+            `}
             onClick={onClick}
             type="button"
         >

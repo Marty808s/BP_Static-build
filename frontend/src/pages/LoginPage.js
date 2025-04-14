@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "@core/Container/Container";
-import Headings from "@core/Text/Headings";
-import Button from "@core/Button/Button";
+//import Headings from "@core/Text/Headings";
+//import Button from "@core/Button/Button";
 import Nav from "@components/core/Nav";
 import LoginForm from "@login/LoginForm";
 
