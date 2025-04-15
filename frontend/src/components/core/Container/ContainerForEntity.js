@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ContainerForEntity({id, children, property, variant = "gray"}) {
+export default function ContainerForEntity({id, children, property, onClick, variant = "gray"}) {
 
     const defaultClass = "border border-black rounded-lg p-2"
 
@@ -13,8 +13,9 @@ export default function ContainerForEntity({id, children, property, variant = "g
 
     return(
         <div 
-            className={`${variants[variant]} ${property || ""}`}
+            className={`${variants[variant]} ${property || ""} ${onClick ? "cursor-pointer" : ""}`}
             id={id}
+            onClick={onClick}
         >
             {children}
         </div>

@@ -5,8 +5,14 @@ import Paragraph from "@components/core/Text/Paragraph"
 import Headings from "@components/core/Text/Headings"
 
 export default function NabidkaEntity({entity}) {
+
+    // handle click nabídky
+    const handleClick = () => {
+        console.log("clicked", entity.id)
+    }
+
     return(
-        <ContainerForEntity variant="gray" property="hover:shadow-lg transition-shadow duration-200">
+        <ContainerForEntity id={entity.id} variant="gray" onClick={handleClick} property="hover:shadow-lg transition-shadow duration-200">
             <Container property="grid grid-cols-[auto,1fr] gap-4">
 
                 {/* LOGO */}
@@ -19,15 +25,15 @@ export default function NabidkaEntity({entity}) {
 
                 <Container property={"grid grid-cols-1"}>
                     {/* TITULEK */}
-                    <Container property="p-2 space-y-2">
-                        <Headings sizeTag="h4" property="text-black">
+                    <Container property="p-1 space-y-1">
+                        <Headings sizeTag="h5-bold" property="text-black">
                             {entity.title}
                         </Headings>
                     </Container>
 
                     {/* ANOTACE */}
-                    <Container property="p-2 space-y-2">
-                        <Container property="space-y-2">
+                    <Container property="p-1 space-y-1">
+                        <Container property="space-y-1">
                             <Paragraph variant="base" property="text-gray-600 line-clamp-3">
                                 {entity.annotation}
                             </Paragraph>
