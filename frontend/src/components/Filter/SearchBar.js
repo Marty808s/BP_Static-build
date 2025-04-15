@@ -15,7 +15,7 @@ export default function SearchBar() {
     const inputClass = `w-full py-1 px-2 text-black bg-facultyCol rounded-lg border-2 placeholder-gray-800`;
 
     return (
-        <Container property="w-full mb-2 items-center justify-center">
+        <Container property="w-full items-center justify-center">
             <input
                 type={"text"}
                 id={"search"} 
