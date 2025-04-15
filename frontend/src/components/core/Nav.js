@@ -68,7 +68,7 @@ function Nav({user=USER}) {
             "Tohle je dlouhý text, který nemá význam": "/about",
             "O vás": "/oVas"
         },
-        "Contact": "/contact"
+        "Profil": "/profil"
     };
 
     return(

@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors: {
         facultyCol: '#41B3BB',
+        facultyColLight: '#CFFAFE',
         'yellow-50': '#FEFCE8',
         'green-50': '#ECFDF5',
         'red-50': '#FEF2F2',
