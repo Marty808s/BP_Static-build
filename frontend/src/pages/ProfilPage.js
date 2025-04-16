@@ -46,6 +46,26 @@ export default function ProfilPage() {
                             </Paragraph>
                         </Container>
 
+                        {/* SKILLS */}
+                        <Container property="p-1 space-y-1">
+                            <Headings sizeTag={"h4"}>Skills</Headings>
+                            <Container property={"flex flex-wrap gap-2"}>
+
+                                <Button variant="blueSmallNoHover">
+                                    {"Skill 1"}
+                                </Button>
+
+                                <Button variant="blueSmallNoHover">
+                                    {"Skill 2"}
+                                </Button>
+                                
+                            </Container>
+                        </Container>
+
+                        <Container property="p-1 space-y-1">
+                            <Headings sizeTag={"h4"}>CV</Headings>
+                            <Button icon="download">Stáhnout</Button>
+                        </Container>
 
                     </Container>
 
