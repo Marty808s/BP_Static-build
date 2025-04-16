@@ -6,6 +6,7 @@ import './index.css';
 import LoginPage from "@pages/LoginPage";
 import NabidkaPage from '@pages/NabidkaPage';
 import ProfilPage from '@pages/ProfilPage';
+import PraxePage from '@pages/PraxePage';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +17,7 @@ root.render(
         <Route path="/" element={<LoginPage />} />
         <Route path="/nabidka" element={<NabidkaPage />} />
         <Route path="/profil" element={<ProfilPage />} />
+        <Route path="/praxe" element={<PraxePage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

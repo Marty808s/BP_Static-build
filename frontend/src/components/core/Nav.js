@@ -63,7 +63,7 @@ function Nav({user=USER}) {
     const navigationDict = {
         "Nabídka praxí": "/nabidka",
         "Účet": "/",
-        "Objednávky": "/",
+        "Praxe": "/praxe",
         "About": {
             "Tohle je dlouhý text, který nemá význam": "/about",
             "O vás": "/oVas"
