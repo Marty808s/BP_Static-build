@@ -3,25 +3,29 @@ import Container from "@core/Container/Container"
 import ContainerForEntity from "@core/Container/ContainerForEntity"
 import Paragraph from "@components/core/Text/Paragraph"
 import Headings from "@components/core/Text/Headings"
+import { makeQuery, useCurrentUrl, useNavigateParams } from "@hooks/Navigator"
 
 export default function NabidkaEntity({entity}) {
+    const currentUrl = useCurrentUrl();
+    const navigateWithParams = useNavigateParams();
 
-    // handle click nabídky
     const handleClick = () => {
-        console.log("clicked", entity.id)
+        console.log("clicked", entity.id);
+        console.log(currentUrl);
+        const queryString = makeQuery({ id: entity.id });
+        console.log(queryString);
+        navigateWithParams(currentUrl, queryString);
     }
 
     return(
         <ContainerForEntity id={entity.id} variant="gray" onClick={handleClick} property="hover:shadow-lg transition-shadow duration-200">
             <Container property="grid grid-cols-[auto,1fr] gap-4">
-
                 {/* LOGO */}
                 <Container property="w-md bg-blue-600 rounded-lg p-4 flex items-center justify-center">
                     <Headings sizeTag="h4" property="text-white">
                         {"LOGO ZDE"}
                     </Headings>
                 </Container>
-
 
                 <Container property={"grid grid-cols-1"}>
                     {/* TITULEK */}
@@ -48,7 +52,6 @@ export default function NabidkaEntity({entity}) {
                             </Container>
                         </Container>
                     </Container>
-
                 </Container>
             </Container>
         </ContainerForEntity>

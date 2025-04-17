@@ -23,6 +23,14 @@ export default function PraxePage() {
 
     }
 
+    const entity3 = {
+        title: "IOS Developer",
+        logo: "LOGO",
+        administration_date: "23. 10. 2025",
+        status: "Zrušená přihláška"
+
+    }
+
     // hook na entitu
     const handleClick = () => {
         console.log("clicked praxe"); 
@@ -33,8 +41,11 @@ export default function PraxePage() {
             <Nav/>
             <Container property={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"}>
                 <Headings sizeTag={"h4"} property={"mb-4"}>Praxe</Headings>
-                <PraxeEntity entity={entity} onClick={handleClick}/>
-                <PraxeEntity entity={entity2} onClick={handleClick}/>
+                <Container property={"flex flex-col gap-2"}>
+                    <PraxeEntity entity={entity} onClick={handleClick}/>
+                    <PraxeEntity entity={entity2} onClick={handleClick}/>
+                    <PraxeEntity entity={entity3} onClick={handleClick}/>
+                </Container>
             </Container>
         </Container>
     )
