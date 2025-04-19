@@ -5,6 +5,7 @@ import './index.css';
 //import Test from './pages/TestPage';
 import LoginPage from "@pages/LoginPage";
 import NabidkaPage from '@pages/NabidkaPage';
+import NabidkaDetailPage from '@pages/NabidkaDetailPage';
 import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
 import reportWebVitals from './reportWebVitals';
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/nabidka" element={<NabidkaPage />} />
+        <Route path="/nabidka/:id" element={<NabidkaDetailPage />} />
         <Route path="/profil" element={<ProfilPage />} />
         <Route path="/praxe" element={<PraxePage />} />
       </Routes>

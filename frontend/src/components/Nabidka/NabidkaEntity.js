@@ -3,18 +3,13 @@ import Container from "@core/Container/Container"
 import ContainerForEntity from "@core/Container/ContainerForEntity"
 import Paragraph from "@components/core/Text/Paragraph"
 import Headings from "@components/core/Text/Headings"
-import { makeQuery, useCurrentUrl, useNavigateParams } from "@hooks/Navigator"
+import { useNavigate } from "react-router-dom"
 
-export default function NabidkaEntity({entity}) {
-    const currentUrl = useCurrentUrl();
-    const navigateWithParams = useNavigateParams();
+export default function NabidkaEntity({ entity }) {
+    const navigate = useNavigate();
 
     const handleClick = () => {
-        console.log("clicked", entity.id);
-        console.log(currentUrl);
-        const queryString = makeQuery({ id: entity.id });
-        console.log(queryString);
-        navigateWithParams(currentUrl, queryString);
+        navigate(`/nabidka/${entity.id}`);
     }
 
     return(
