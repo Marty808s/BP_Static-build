@@ -5,7 +5,7 @@ import { TbUsers } from "react-icons/tb";
 import { RxCross1, RxCheck } from "react-icons/rx";
 import { FaAngleDown, FaAngleUp, FaLock, FaUser, FaArrowLeft, FaDownload } from "react-icons/fa";
 
-export default function Button({id, children, text, property, onClick, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white"}) {
+export default function Button({id, children, text, property, onClick, pointer = true, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white"}) {
 
     const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
     const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
@@ -54,6 +54,7 @@ export default function Button({id, children, text, property, onClick, variant =
                 ${noVariant ? "" : variants[variant]} 
                 ${!noVariant && (buttonSize === "big" ? baseClassBig : baseClassSmall)} 
                 ${property || ''} 
+                ${pointer ? "cursor-pointer" : "cursor-default"}
                 ${icon && baseIconLayout}
             `}
             onClick={onClick}

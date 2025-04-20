@@ -8,6 +8,7 @@ import NabidkaPage from '@pages/NabidkaPage';
 import NabidkaDetailPage from '@pages/NabidkaDetailPage';
 import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
+import TextEditor from '@pages/TEST_TextEditor';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +21,8 @@ root.render(
         <Route path="/nabidka/:id" element={<NabidkaDetailPage />} />
         <Route path="/profil" element={<ProfilPage />} />
         <Route path="/praxe" element={<PraxePage />} />
+        <Route path="/TEST" element={<TextEditor />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

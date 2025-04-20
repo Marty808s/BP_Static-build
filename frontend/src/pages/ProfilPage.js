@@ -51,11 +51,11 @@ export default function ProfilPage() {
                             <Headings sizeTag={"h4"}>Skills</Headings>
                             <Container property={"flex flex-wrap gap-2"}>
 
-                                <Button variant="blueSmallNoHover">
+                                <Button pointer={false} variant="blueSmallNoHover">
                                     {"Skill 1"}
                                 </Button>
 
-                                <Button variant="blueSmallNoHover">
+                                <Button pointer={false} variant="blueSmallNoHover">
                                     {"Skill 2"}
                                 </Button>
                                 
