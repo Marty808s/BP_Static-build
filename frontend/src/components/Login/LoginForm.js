@@ -5,7 +5,7 @@ import Headings from "@components/core/Text/Headings";
 import LoginSwitch from "@login/LoginSwitch";
 import TextField from "@core/Form/TextField";
 
-export default function LoginForm() {
+export default function LoginForm({handleSTAGLogin}) {
     // dodělat hook z parenta na informace z formuláře
     const [loginAccess, setLoginAccess] = useState({});
 
@@ -54,6 +54,7 @@ export default function LoginForm() {
 
                 <Button 
                     property={"w-full items-center"}
+                    onClick={handleSTAGLogin}
                 >
                     Přihlaste se             
                 </Button>
