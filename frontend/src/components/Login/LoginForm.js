@@ -3,6 +3,7 @@ import Container from "@core/Container/Container";
 import Button from "@core/Button/Button";
 import Headings from "@components/core/Text/Headings";
 import LoginSwitch from "@login/LoginSwitch";
+import Paragraph from "@core/Text/Paragraph";
 import TextField from "@core/Form/TextField";
 
 export default function LoginForm({handleSTAGLogin}) {
@@ -14,10 +15,11 @@ export default function LoginForm({handleSTAGLogin}) {
             ...prevState,
             ...newValues
         }));
+        
     }, []);
 
     useEffect(() => {
-        console.log(loginAccess);
+        console.log("LoginAccess", loginAccess);
     }, [loginAccess]);
 
     const handleButtonClick = () => {
@@ -30,6 +32,8 @@ export default function LoginForm({handleSTAGLogin}) {
                 <LoginSwitch getLoginType={handleAccess}/>
                 <Headings sizeTag="h4" property="text-center">Přihlášení</Headings>
                 
+               { loginAccess.switch !== "STAG" ? (
+                <>
                 <TextField 
                     id="name" 
                     onIconClick={handleButtonClick} 
@@ -51,6 +55,14 @@ export default function LoginForm({handleSTAGLogin}) {
                     property="m-4"
                     onChange={handleAccess}
                 />
+                </>
+                ):
+                (
+                    <Container property="m-4">
+                        <Paragraph property="text-center mb-16">Přihlášení pomocí systému STAG příslušné univerzity.</Paragraph>
+                    </Container>
+                )
+                }
 
                 <Button 
                     property={"w-full items-center"}
