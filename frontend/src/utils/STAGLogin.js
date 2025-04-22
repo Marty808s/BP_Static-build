@@ -37,6 +37,6 @@ export const getParams = () => {
     const stagUserRole = urlParams.get('stagUserRole');
     const stagUserInfo = urlParams.get('stagUserInfo');
     console.log("Params:", stagUserTicket, stagUserName, stagUserRole, stagUserInfo);
-    return { "Ticket": stagUserTicket, "Username": stagUserName, "Role": stagUserRole, "Info": decodeUserInfo(stagUserInfo) };
+    return { "Ticket": stagUserTicket, "Username": stagUserName, "Role": stagUserRole, "Info":  stagUserInfo ? decodeUserInfo(stagUserInfo) : null };
 }
 
