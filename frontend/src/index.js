@@ -10,21 +10,23 @@ import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
 import TextEditor from '@pages/TEST_TextEditor';
 import reportWebVitals from './reportWebVitals';
+import UserProvider from '@hooks/UserProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/nabidka" element={<NabidkaPage />} />
-        <Route path="/nabidka/:id" element={<NabidkaDetailPage />} />
-        <Route path="/profil" element={<ProfilPage />} />
-        <Route path="/praxe" element={<PraxePage />} />
-        <Route path="/TEST" element={<TextEditor />} />
-
-      </Routes>
-    </BrowserRouter>
+    <UserProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/nabidka" element={<NabidkaPage />} />
+          <Route path="/nabidka/:id" element={<NabidkaDetailPage />} />
+          <Route path="/profil" element={<ProfilPage />} />
+          <Route path="/praxe" element={<PraxePage />} />
+          <Route path="/TEST" element={<TextEditor />} />
+        </Routes>
+      </BrowserRouter>
+    </UserProvider>
   </React.StrictMode>
 );
 
