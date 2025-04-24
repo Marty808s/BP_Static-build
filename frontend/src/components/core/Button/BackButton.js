@@ -9,7 +9,7 @@ export default function BackButton() {
     }
 
     return(
-        <Button variant={"primarySmall"} icon={"arrowLeft"} iconColor={"text-white"} onClick={() => handleBack()}>
+        <Button variant={"primarySmall"} property={"mb-2"} icon={"arrowLeft"} iconColor={"text-white"} onClick={() => handleBack()}>
             Zpět
         </Button>
     )

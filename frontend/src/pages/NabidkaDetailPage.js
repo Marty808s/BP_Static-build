@@ -7,13 +7,13 @@ import Headings from "@core/Text/Headings";
 import { useParams } from "react-router-dom";
 import HTMLReactParser from "html-react-parser";
 import Button from "@core/Button/Button";
-
+import DocsPanel from "@components/Nabidka/DocsPanel";
 
 export default function NabidkaDetailPage() {
     const { id } = useParams();
 
     //PODLE USERA ZE SESSION UKÁŽU PŘÍSLUŠNOU PODOBU TÉTO STRÁNKY 
-    // (udělat variantu volné nabídky a následně probíhající/spravované)
+    // (udělat variantu volné nabídky a následně probíhající/spravované podle API callu před vypsáním (status - je moje přiřazení?))
 
     const entity = {
         "id": "1",
@@ -23,41 +23,45 @@ export default function NabidkaDetailPage() {
         "adress": "Praha, Česká republika"
     }
 
-    // Volná nabídka
+
+    //
     return(
         <Container property="min-h-screen">
             <Nav/>
             <Container property="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <ContainerForEntity property={"pl-8 pr-8 pt-4 pb-8"}>
                 <BackButton/>
-                <Container property="grid grid-cols-[auto,1fr] gap-4 mt-2 mb-4">
-                        
-                    {/* LOGO */}
-                    <Container property="w-md bg-blue-600 rounded-lg p-4 flex items-center justify-center">
-                        <Headings sizeTag="h4" property="text-white">
-                            {"LOGO"}
-                        </Headings>
-                    </Container>
-
-                    {/* TITLE */}
-                    <Container>
-                        <Headings sizeTag={"h4"} property={""}>{entity.title} | {id}</Headings>
-                        <Container property={"flex flex-row gap-2"}>
-                            <Button variant="blueSmallNoHover" pointer={false} className="w-fit">Místo konání: {entity.adress}</Button>
-                            <Button variant="blueSmallNoHover" pointer={false} className="w-fit">{entity.time}</Button>
+                {/* PODLE PŘÍZNAKU */}
+                <DocsPanel/>
+                <ContainerForEntity property={"pl-8 pr-8 pt-4 pb-8"}>
+                    {/*<BackButton/>*/}
+                    <Container property="grid grid-cols-[auto,1fr] gap-4 mt-2 mb-4">
+                            
+                        {/* LOGO */}
+                        <Container property="w-md bg-blue-600 rounded-lg p-4 flex items-center justify-center">
+                            <Headings sizeTag="h4" property="text-white">
+                                {"LOGO"}
+                            </Headings>
                         </Container>
+
+                        {/* TITLE */}
+                        <Container>
+                            <Headings sizeTag={"h4"} property={""}>{entity.title} | {id}</Headings>
+                            <Container property={"flex flex-row gap-2"}>
+                                <Button variant="blueSmallNoHover" pointer={false} className="w-fit">Místo konání: {entity.adress}</Button>
+                                <Button variant="blueSmallNoHover" pointer={false} className="w-fit">{entity.time}</Button>
+                            </Container>
+                        </Container>
+
+                    </Container>
+                    {/* ANNOTATION */}
+                    <Container property={"editor-content mt-2"}>
+                        {HTMLReactParser(entity.annotation)}
                     </Container>
 
-                </Container>
-                {/* ANNOTATION */}
-                <Container property={"editor-content mt-2"}>
-                    {HTMLReactParser(entity.annotation)}
-                </Container>
-
-                <Container property={"grid grid-cols-1 gap-8"}>
-                    <Button className="col-start-1 justify-self-end">Podat přihlášku</Button>
-                </Container>
-            </ContainerForEntity>
+                    <Container property={"grid grid-cols-1 gap-8"}>
+                        <Button className="col-start-1 justify-self-end">Podat přihlášku</Button>
+                    </Container>
+                </ContainerForEntity>
                 
             </Container>
         </Container>
