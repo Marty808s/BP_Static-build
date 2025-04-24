@@ -47,8 +47,8 @@ export default function NabidkaDetailPage() {
                         <Container>
                             <Headings sizeTag={"h4"} property={""}>{entity.title} | {id}</Headings>
                             <Container property={"flex flex-row gap-2"}>
-                                <Button variant="blueSmallNoHover" pointer={false} className="w-fit">Místo konání: {entity.adress}</Button>
-                                <Button variant="blueSmallNoHover" pointer={false} className="w-fit">{entity.time}</Button>
+                                <Button variant="blueSmallNoHover" pointer={false} property="w-fit">Místo konání: {entity.adress}</Button>
+                                <Button variant="blueSmallNoHover" pointer={false} property="w-fit">{entity.time}</Button>
                             </Container>
                         </Container>
 
