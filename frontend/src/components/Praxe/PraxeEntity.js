@@ -5,7 +5,7 @@ import Container from "@core/Container/Container";
 import Paragraph from "@core/Text/Paragraph";
 import Button from "@core/Button/Button";
 
-export default function PraxeEntity({entity, onClick=null}) {
+export default function PraxeEntity({entity, onClick, onView}) {
 
     const statusEntity = {
         "Probíhající stáž": "green",
@@ -24,10 +24,13 @@ export default function PraxeEntity({entity, onClick=null}) {
                 <Paragraph>Status: {entity.status}</Paragraph>
                 {/* POKUD BUDE ZAMÍTNUTÁ, TAK NEBUDE MÍT IKONU */}
 
-                {entity.status !== "Zrušená přihláška" && 
-                <Container property={"flex flex-row gap-1 inline-block justify-end"}>
-                    <Button noVariant={true} icon="eye" iconColor={"text-black"} iconSize={"24"}></Button>
-                </Container>}
+                <Container property={"flex flex-row gap-4 inline-block justify-end"}>
+                    <Button noVariant={true} icon="eye" iconColor={"text-black"} iconSize={"24"} onClick={onView}></Button>
+                    
+                    {entity.status === "Pozvánka" && 
+                        <Button noVariant={true} icon="gear" iconColor={"text-black"} iconSize={"24"} onClick={onClick}></Button>
+                    }
+                    </Container>
 
             </Container>
     </ContainerForEntity>
