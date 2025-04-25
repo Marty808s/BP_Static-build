@@ -21,7 +21,12 @@ export const decodeUserInfo = (encodedInfo) => {
     try {
         const urlDecoded = decodeURIComponent(encodedInfo);
         const base64Decoded = atob(urlDecoded);
-        return JSON.parse(base64Decoded);
+        const bytes = new Uint8Array(base64Decoded.length);
+        for (let i = 0; i < base64Decoded.length; i++) {
+            bytes[i] = base64Decoded.charCodeAt(i);
+        }
+        const decodedString = new TextDecoder('utf-8').decode(bytes);
+        return JSON.parse(decodedString);
     } catch (error) {
         console.error("Chyba při dekódování user info:", error);
         return null;

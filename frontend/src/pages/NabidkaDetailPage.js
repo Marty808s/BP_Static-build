@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "@core/Container/Container";
 import ContainerForEntity from "@core/Container/ContainerForEntity";
 import Nav from "@components/core/Nav";
@@ -8,9 +8,23 @@ import { useParams } from "react-router-dom";
 import HTMLReactParser from "html-react-parser";
 import Button from "@core/Button/Button";
 import DocsPanel from "@components/Nabidka/DocsPanel";
+import PopUpCon from "@core/Container/PopUpCon";
 
 export default function NabidkaDetailPage() {
     const { id } = useParams();
+    const [popUp, setPopUp] = useState(false);
+
+    const handlePopUp = () => {
+        setPopUp(!popUp);
+    }
+
+    const onSubmit = () => {
+        console.log("Přihláška podána");
+    }
+
+    const onReject = () => {
+        console.log("Přihláška odmítnuta");
+    }
 
     //PODLE USERA ZE SESSION UKÁŽU PŘÍSLUŠNOU PODOBU TÉTO STRÁNKY 
     // (udělat variantu volné nabídky a následně probíhající/spravované podle API callu před vypsáním (status - je moje přiřazení?))
@@ -59,11 +73,21 @@ export default function NabidkaDetailPage() {
                     </Container>
 
                     <Container property={"grid grid-cols-1 gap-8"}>
-                        <Button className="col-start-1 justify-self-end">Podat přihlášku</Button>
+                        <Button className="col-start-1 justify-self-end" onClick={handlePopUp}>Podat přihlášku</Button>
                     </Container>
                 </ContainerForEntity>
                 
             </Container>
+
+            {popUp && (
+                <PopUpCon 
+                    onClose={handlePopUp} 
+                    title="Přihláška" 
+                    text={"Opravdu si přejete podat přihlášku?"}
+                    onSubmit={onSubmit}
+                    onReject={onReject}
+                ></PopUpCon>
+            )}
         </Container>
     )
 } 
