@@ -22,9 +22,9 @@ export default function PopUpCon({children, onClose, title, text, onSubmit, onRe
                 </Container>
 
                 {/* BUTTONY */}
-                <Container property={"flex justify-between ml-4 mr-4"}>
-                    <Button property={"px-16"} onClick={onSubmit}>Ano</Button>
-                    <Button variant={"red"} property={"px-16"} onClick={onReject}>Ne</Button>
+                <Container property={"flex justify-between ml-4 mr-4 gap-4"}>
+                    <Button property={"w-full"} onClick={onSubmit}>Ano</Button>
+                    <Button variant={"red"} property={"w-full"} onClick={onReject}>Ne</Button>
                 </Container>
 
 
