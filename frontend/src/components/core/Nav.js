@@ -65,7 +65,7 @@ function Nav({user=USER}) {
         "Účet": "/",
         "Praxe": "/praxe",
         "About": {
-            "Tohle je dlouhý text, který nemá význam": "/about",
+            "TEST - PRVKY FORMULÁŘE": "/test_forms",
             "O vás": "/oVas"
         },
         "Profil": "/profil"

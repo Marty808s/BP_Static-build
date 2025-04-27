@@ -9,6 +9,8 @@ import NabidkaDetailPage from '@pages/NabidkaDetailPage';
 import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
 import TextEditor from '@pages/TEST_TextEditor';
+import TEST_FORM from '@pages/TEST_FORMS';
+
 import reportWebVitals from './reportWebVitals';
 import UserProvider from '@hooks/UserProvider';
 
@@ -24,6 +26,8 @@ root.render(
           <Route path="/profil" element={<ProfilPage />} />
           <Route path="/praxe" element={<PraxePage />} />
           <Route path="/TEST" element={<TextEditor />} />
+          <Route path="/test_forms" element={<TEST_FORM />} />
+
         </Routes>
       </BrowserRouter>
     </UserProvider>
