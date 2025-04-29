@@ -64,8 +64,8 @@ function Nav({user=USER}) {
         "Nabídka praxí": "/nabidka",
         "Účet": "/",
         "Praxe": "/praxe",
-        "About": {
-            "TEST - PRVKY FORMULÁŘE": "/test_forms",
+        "Formuláře": {
+            "StudentForm": "/ProfileForm",
             "O vás": "/oVas"
         },
         "Profil": "/profil"

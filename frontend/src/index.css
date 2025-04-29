@@ -59,3 +59,10 @@
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
+
+.react-datepicker-wrapper {
+    width: 100%;
+  }
+  .react-datepicker__input-container {
+    width: 100%;
+  }

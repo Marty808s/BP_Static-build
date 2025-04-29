@@ -2,11 +2,12 @@ import React, { useState, useCallback } from "react";
 import Container from "@core/Container/Container";
 import Paragraph from "@core/Text/Paragraph";
 
-export default function TextBox({id, label, placeholder, value, rows = 5, onChange}) {
+export default function TextBox({id, label, required = false, placeholder, value, rows = 5, onChange}) {
     const [inputValue, setInputValue] = useState((value && id) ? {[id]: value} : {[id]: ""});
     
     const labelEntity = label ? <Paragraph>{label}</Paragraph> : null;
-    
+    const requiredLabel = <Paragraph property={"text-red-600 ml-1"}>*</Paragraph>
+
     const inputClass = "w-full px-2 py-1 text-base text-gray-900 bg-gray-100 rounded-lg border-2";
     
     const handleTextChange = useCallback((event) => {
@@ -25,7 +26,10 @@ export default function TextBox({id, label, placeholder, value, rows = 5, onChan
     
     return (
         <Container>
-            {labelEntity}
+            <Container property="flex items-center">
+                {labelEntity}
+                {required && requiredLabel}
+            </Container>
             <textarea 
                 type="text"
                 id={id}
