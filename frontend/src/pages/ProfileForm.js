@@ -151,7 +151,7 @@ export default function ProfileForm() {
     const companyForm = () => {
         return(
             <>
-            <Container property={"grid grid-cols-2 w-full justify-start items-center"}>
+            <Container property={"grid gap-2 grid-cols-3"}>
                 <TextField 
                     id={"companyName"}
                     required={true}
