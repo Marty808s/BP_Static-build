@@ -40,11 +40,11 @@ export default function Button({id, children, text, property, onClick, pointer =
     
     const variants = {
         primary: "bg-facultyCol text-white hover:bg-gray-400 " + baseClassBig,
-        blue: "bg-blue-300 text-gray-800 hover:bg-gray-400 " + baseClassBig,
+        blue: "bg-blue-300 text-white hover:bg-gray-400 " + baseClassBig,
         red: "bg-red-400 text-white hover:bg-gray-400 " + baseClassBig,
         yellow: "bg-yellow-300 text-white hover:bg-gray-400 " + baseClassBig,
         primarySmall: "bg-facultyCol text-white hover:bg-gray-400 " + baseClassSmall,
-        blueSmall: "bg-blue-300 text-gray-800 hover:bg-gray-400 " + baseClassSmall,
+        blueSmall: "bg-blue-300 text-white   hover:bg-gray-400 " + baseClassSmall,
         redSmall: "bg-red-400 text-white hover:bg-gray-400 " + baseClassSmall,
         yellowSmall: "bg-yellow-300 text-white hover:bg-gray-400 " + baseClassSmall,
         blueSmallNoHover: "bg-blue-300 text-gray-800" + baseClassSmall,

@@ -11,6 +11,15 @@ module.exports = {
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@context': path.resolve(__dirname, 'src/context'),
       '@assets': path.resolve(__dirname, 'src/assets')
+    },
+    configure: (webpackConfig) => {
+      webpackConfig.ignoreWarnings = [
+        {
+          module: /react-datepicker/,
+          message: /Failed to parse source map/,
+        },
+      ];
+      return webpackConfig;
     }
   }
 }; 
