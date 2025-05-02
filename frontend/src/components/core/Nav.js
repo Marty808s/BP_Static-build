@@ -66,7 +66,7 @@ function Nav({user=USER}) {
         "Praxe": "/praxe",
         "Formuláře": {
             "StudentForm": "/ProfileForm",
-            "O vás": "/oVas"
+            "Studenti": "/Students"
         },
         "Profil": "/profil"
     };

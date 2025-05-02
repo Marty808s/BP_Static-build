@@ -10,6 +10,7 @@ import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
 import TextEditor from '@pages/TEST_TextEditor';
 import ProfileForm from '@pages/ProfileForm';
+import StudentPage from '@pages/StudentsPage';
 
 import reportWebVitals from './reportWebVitals';
 import UserProvider from '@hooks/UserProvider';
@@ -27,7 +28,7 @@ root.render(
           <Route path="/praxe" element={<PraxePage />} />
           <Route path="/TEST" element={<TextEditor />} />
           <Route path="/ProfileForm" element={<ProfileForm />} /> {/* DODĚLAT PARAMS NA USERA ZE SESSION*/}
-
+          <Route path="/Students" element={<StudentPage />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
