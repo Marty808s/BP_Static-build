@@ -1,10 +1,13 @@
-import React from "react";
-import Nav from "@core/Nav";
+import React, { useState } from "react";
 import Container from "@core/Container/Container";
+import Nav from "@components/core/Nav";
+import Headings from "@core/Text/Headings";
+import BackButton from "@core/Button/BackButton";
+import Button from "@core/Button/Button";
 import UserEntity from "@components/Users/UserEntity";
-import Paragraph from "@core/Text/Paragraph";
 
-export default function StudentPage() {
+export default function VytvorenePraxe() {
+
     const entities = [
         {
             name: "Pavel",
@@ -29,8 +32,8 @@ export default function StudentPage() {
 
     const btnLayout = [
         {
-            icon: "eye",
-            btnfunction: () => console.log("Hello")
+            icon: "users",
+            btnfunction: () => console.log("Uživatelé")
         },
         {
             icon: "edit",
@@ -39,14 +42,25 @@ export default function StudentPage() {
     ]
 
     const attributes = {
-        "Obor": "field", 
-        "Škola": "school"
+        "Obor":"field",
+        "Škola":"school"
+
     }
 
     return(
         <Container property="min-h-screen">
             <Nav/>
-            <Container property={"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"}>
+            <Container property="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <BackButton/>
+                <Headings property={"mt-2 mb-2"}>Vytvořené stáže</Headings>
+                <Button
+                    variant={"primarySmall"}
+                    icon={"plus"}
+                    onClick={() => console.log("Vytvořit stáž")}
+                    text={"Založit stáž"}
+                >
+                </Button>
+
                 <Container property={"w-full flex-row gap-2 mt-2"}>
                     {entities.map(entity => (
                         <UserEntity
@@ -60,5 +74,6 @@ export default function StudentPage() {
 
             </Container>
         </Container>
+
     )
 }

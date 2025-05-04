@@ -5,6 +5,8 @@ export default function Paragraph({ children, variant = "base", property, onClic
     const variants = {
         baseBold: "font-bold text-base",
         base: "font-normal text-base",
+        small: "font-normal text-sm",
+        tiny: "font-normal text-xs",
         largeBold: "font-bold text-lg",
         large: "font-normal text-lg"
     };

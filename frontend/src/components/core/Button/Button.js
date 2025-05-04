@@ -5,10 +5,10 @@ import { TbUsers } from "react-icons/tb";
 import { RxCross1, RxCheck } from "react-icons/rx";
 import { FaAngleDown, FaAngleUp, FaLock, FaUser, FaArrowLeft, FaSave, FaDownload, FaUpload, FaCalendarAlt } from "react-icons/fa";
 
-export default function Button({id, children, text, property, onClick, pointer = true, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white", disabled = false }) {
+export default function Button({id, children, text, property, onClick, textSize = "base", pointer = true, variant = "primary", buttonSize = "big", noVariant = false, icon = null, iconSize = "14", iconColor = "text-white", disabled = false }) {
 
-    const baseClassBig = "px-4 py-2 rounded-lg p-2 transition-colors duration-200";
-    const baseClassSmall = "px-2 py-1 rounded-lg p-1 transition-colors duration-200";
+    const baseClassBig = "px-4 py-2 rounded-lg transition-colors duration-200";
+    const baseClassSmall = "px-2 py-1 rounded-lg transition-colors duration-200";
 
     const icons = {
         angleDown: <FaAngleDown size={iconSize} className={iconColor} />,
@@ -36,7 +36,7 @@ export default function Button({id, children, text, property, onClick, pointer =
 
     const baseIconLayout = "inline-flex items-center gap-1"
     
-    const baseText = text ? <Paragraph>{text}</Paragraph> : null;
+    const baseText = text ? <Paragraph variant={textSize}>{text}</Paragraph> : null;
     
     const variants = {
         primary: "bg-facultyCol text-white hover:bg-gray-400 " + baseClassBig,

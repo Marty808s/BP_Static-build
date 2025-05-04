@@ -23,12 +23,12 @@ function SubMenu({ items, title }) {
                 </Container>
             </Button>
             {isOpen && (
-                <Container property="absolute bg-facultyCol px-2 py-1 shadow-lg rounded-md min-w-[150px] max-w-[200px] z-50">
+                <Container property="absolute bg-facultyCol px-2 py-2 shadow-lg rounded-md min-w-[150px] max-w-[200px] z-50">
                     {Object.entries(items).map(([key, value]) => (
                         <Link 
                             key={key} 
                             to={value} 
-                            className="block text-white hover:text-gray-200 transition-colors"
+                            className="block text-white hover:text-gray-200 mt-2 transition-colors"
                         >
                             {key}
                         </Link>
@@ -64,11 +64,15 @@ function Nav({user=USER}) {
         "Nabídka praxí": "/nabidka",
         "Účet": "/",
         "Praxe": "/praxe",
+        "TEST STRÁNEK": {
+            "SprInPrihlaseni": "/SprInPrihlaseni",
+            "VytStáže": "/VytNabidku"
+        },
         "Formuláře": {
             "StudentForm": "/ProfileForm",
             "Studenti": "/Students"
         },
-        "Profil": "/profil"
+        "Profil": "/profil",
     };
 
     return(

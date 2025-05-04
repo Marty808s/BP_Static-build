@@ -21,9 +21,9 @@ export default function UserEntity({entity, attributes, buttons, status="gray"})
                 </Container>
                 
                 <Container property="flex-1 flex flex-row gap-12 items-center">
-                    {attributes.map(att => (
-                        <Container key={att} property="w-32">
-                            <Paragraph>{entity[att]}</Paragraph>
+                    {Object.entries(attributes).map(([key, value]) => (
+                        <Container key={key} property="w-32">
+                        {key !=="" ? <Paragraph>{key}: {entity[value]}</Paragraph> : <Paragraph>{entity[value]}</Paragraph>}                            
                         </Container>
                     ))}
                 </Container>

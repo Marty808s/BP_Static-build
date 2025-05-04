@@ -279,7 +279,7 @@ export default function ProfileForm() {
                     Uložit
                 </Button>
 
-        </Container>
+            </Container>
         </>
         )
     }
@@ -297,7 +297,7 @@ export default function ProfileForm() {
                 <BackButton></BackButton>
                 {/* DEBUG BUTTON - PŘEPÍNAČ */}
                 <Button
-                    property={"mt-2 px-16 ml-4"} 
+                    property={"px-16 ml-4"} 
                     onClick={() => setIsStudent(!isStudent)}
                 >
                     Přepni se na jiný formulář

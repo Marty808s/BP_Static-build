@@ -9,8 +9,10 @@ import NabidkaDetailPage from '@pages/NabidkaDetailPage';
 import ProfilPage from '@pages/ProfilPage';
 import PraxePage from '@pages/PraxePage';
 import TextEditor from '@pages/TEST_TextEditor';
-import ProfileForm from '@pages/ProfileForm';
+import ProfileForm from '@pages/ProfilFormPage';
 import StudentPage from '@pages/StudentsPage';
+import VytvorenePraxe from '@pages/VytvorenePraxePage';
+import VytvoritNabidku from '@pages/VytvoritNabidku';
 
 import reportWebVitals from './reportWebVitals';
 import UserProvider from '@hooks/UserProvider';
@@ -29,6 +31,8 @@ root.render(
           <Route path="/TEST" element={<TextEditor />} />
           <Route path="/ProfileForm" element={<ProfileForm />} /> {/* DODĚLAT PARAMS NA USERA ZE SESSION*/}
           <Route path="/Students" element={<StudentPage />} />
+          <Route path="/SprInPrihlaseni" element={<VytvorenePraxe />} />
+          <Route path="/VytNabidku" element={<VytvoritNabidku />} />
         </Routes>
       </BrowserRouter>
     </UserProvider>
