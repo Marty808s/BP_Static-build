@@ -6,7 +6,7 @@ import React from "react";
 import Button from "@core/Button/Button";
 import Container from "@core/Container/Container";
 import ContainerForEntity from "@core/Container/ContainerForEntity";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import Headings from "@core/Text/Headings";
 
 export default function UserEntity({entity, attributes, buttons, status="gray"}) {

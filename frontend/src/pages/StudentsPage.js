@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "@core/Nav";
 import Container from "@core/Container/Container";
 import UserEntity from "@components/Users/UserEntity";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 
 export default function StudentPage() {
     const entities = [

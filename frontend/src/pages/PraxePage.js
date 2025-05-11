@@ -3,7 +3,7 @@ import Nav from "@core/Nav";
 import Container from "@core/Container/Container";
 import ContainerForEntity from "@core/Container/ContainerForEntity";
 import Headings from "@core/Text/Headings";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import PraxeEntity from "@components/Praxe/PraxeEntity";
 import PopUpCon from "@core/Container/PopUpCon";
 

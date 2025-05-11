@@ -5,7 +5,7 @@ import Button from "@core/Button/Button";
 import BackButton from "@core/Button/BackButton";
 import Headings from "@core/Text/Headings";
 import Nav from "@core/Nav";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 
 export default function ProfilPage() {
     return(

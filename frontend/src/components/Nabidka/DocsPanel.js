@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@core/Container/Container";
 import ContainerForEntity from "@core/Container/ContainerForEntity";
 import Nav from "@components/core/Nav";
-import Paragraph from "@core/Text/Paragraph"
+import Paragraph from "@components/core/Text/Paragraph"
 import Headings from "@core/Text/Headings"
 import Button from "@core/Button/Button";
 

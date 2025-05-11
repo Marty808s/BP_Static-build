@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Container from "@core/Container/Container";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 
 export default function TextBox({id, label, required = false, placeholder, value, rows = 5, onChange}) {
     const [inputValue, setInputValue] = useState((value && id) ? {[id]: value} : {[id]: ""});

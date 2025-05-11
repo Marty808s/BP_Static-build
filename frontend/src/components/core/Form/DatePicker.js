@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { cs } from "date-fns/locale";
 import Container from "@core/Container/Container";
 import Button from "@core/Button/Button";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import { format } from "date-fns";
 
 export default function CustomDatePicker({ id, property, value, required=false, label, onChange, children }) {

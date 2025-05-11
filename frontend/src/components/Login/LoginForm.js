@@ -3,7 +3,7 @@ import Container from "@core/Container/Container";
 import Button from "@core/Button/Button";
 import Headings from "@components/core/Text/Headings";
 import LoginSwitch from "@login/LoginSwitch";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import TextField from "@core/Form/TextField";
 
 export default function LoginForm({handleSTAGLogin}) {

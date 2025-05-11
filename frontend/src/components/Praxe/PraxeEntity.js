@@ -2,7 +2,7 @@ import React from "react";
 import ContainerForEntity from "@core/Container/ContainerForEntity";
 import Headings from "@core/Text/Headings";
 import Container from "@core/Container/Container";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import Button from "@core/Button/Button";
 
 export default function PraxeEntity({entity, onClick, onView}) {

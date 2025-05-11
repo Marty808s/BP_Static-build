@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import Container from "@core/Container/Container";
-import Paragraph from "@core/Text/Paragraph";
+import Paragraph from "@components/core/Text/Paragraph";
 import Button from "@core/Button/Button";
 
 export default function DropDown({id, property, label, placeholder, icon = false, required = false, value, onChange, options = [], onIconClick}) {
